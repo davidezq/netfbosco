@@ -13,7 +13,16 @@ export default function TabThreeScreen() {
       data={DATA}
       renderItem={({item})=>{
         return (
-          
+          <View style={{marginBottom:30}}>
+          <WebView
+                style={{flex:1,width:'100%',height:300}}
+                originWhitelist={['*']}
+                source={{ html: `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${item.youtube}" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` }}
+              />
+          <Text style={{marginBottom:5}}>Título: {item.titulo}</Text>
+          <Text style={{textAlign:'justify',marginBottom:5}}>Descripción: {item.description}</Text>
+          <Text>Fecha de estreno: {item.estreno}</Text>
+          </View>
         )
       }}
     />
