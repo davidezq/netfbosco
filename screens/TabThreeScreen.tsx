@@ -1,22 +1,28 @@
-import { StyleSheet } from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
+import {WebView} from 'react-native-webview'
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
+const DATA = require("../data/proximamente.json")
+
 export default function TabThreeScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Proximamente</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-    </View>
+    <FlatList
+      style={styles.container}
+      data={DATA}
+      renderItem={({item})=>{
+        return (
+          
+        )
+      }}
+    />
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    flex: 1
   },
   title: {
     fontSize: 20,

@@ -16,16 +16,16 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
     <ScrollView>
 
       <View style={styles.container}>
-        <TouchableHighlight onPress={() => { navigation.navigate('Modal', { video_trailer: "30R7Io_DmyU" }) }}>
-          <Image style={{ width: '100%', height: 250, resizeMode: 'contain' }} source={require("../assets/images/peliculas/1.jpg")} />
+        <TouchableHighlight onPress={() => { navigation.navigate('Modal' as never, { video_trailer: "30R7Io_DmyU" } as never) }}>
+          <Image style={{ width: '100%', height: 250, resizeMode: 'contain' }} source={{uri:PELICULAS.john.img}} />
         </TouchableHighlight>
 
         <Text style={styles.subtitle}>Comedia 😂</Text>
         <FlatList
           data={PELICULAS.comedia}
           renderItem={({ item }) => {
-            return (
-              <TouchableHighlight onPress={() => { navigation.navigate('Modal', { video_trailer: item.youtube }) }}>
+            return ( 
+              <TouchableHighlight onPress={() => { navigation.navigate( 'Modal' as never, { video_trailer: item.youtube } as never) }}>
                 <Image style={styles.image}
                   source={{ uri: item.img }}
                 />
@@ -43,7 +43,7 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
           data={PELICULAS.romance}
           renderItem={({ item }) => {
             return (
-              <TouchableHighlight onPress={() => { navigation.navigate('Modal', { video_trailer: item.youtube }) }}>
+              <TouchableHighlight onPress={() => { navigation.navigate('Modal' as never, { video_trailer: item.youtube } as never )}}>
                 <Image style={styles.image}
                   source={{ uri: item.img }}
                 />
@@ -61,7 +61,7 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
           data={PELICULAS.accion}
           renderItem={({ item }) => {
             return (
-              <TouchableHighlight onPress={() => { navigation.navigate('Modal', { video_trailer: item.youtube }) }}>
+              <TouchableHighlight onPress={() => { navigation.navigate('Modal' as never, { video_trailer: item.youtube } as never) }}>
                 <Image style={styles.image}
                   source={{ uri: item.img }}
                 />
